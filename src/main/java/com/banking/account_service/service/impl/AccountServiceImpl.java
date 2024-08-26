@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.banking.account_service.service.AccountService;
+import com.banking.account_service.util.ConstantUtils;
 
 @Service
 public class AccountServiceImpl implements AccountService {
@@ -11,7 +12,7 @@ public class AccountServiceImpl implements AccountService {
     private final WebClient webClient;
 
     public AccountServiceImpl(WebClient.Builder webClientBuilder) {
-        this.webClient = webClientBuilder.baseUrl("http://localhost:8081").build();
+        this.webClient = webClientBuilder.baseUrl(ConstantUtils.balanceBaseUrl).build();
     }
 
     @Override

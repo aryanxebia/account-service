@@ -18,7 +18,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public String getBalanceFromBalanceService() {
         return webClient.get()
-                        .uri("/balance/get-balance")
+                        .uri("/api/v1/balance-countries")
                         .retrieve()
                         .bodyToMono(String.class)
                         .block();

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.banking.account_service.service.AccountService;
 
 @RestController
-@RequestMapping("/account")
+@RequestMapping("/api/v1/")
 public class AccountController {
 
     private final AccountService accountService;
@@ -19,7 +19,7 @@ public class AccountController {
         this.accountService = accountService;
     }
 
-    @GetMapping("/get-account-balance")
+    @GetMapping("balance-countries")
     public ResponseEntity<String> getAccountBalance() {
         String balance = accountService.getBalanceFromBalanceService();
         return ResponseEntity.ok(balance);
